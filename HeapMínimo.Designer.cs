@@ -77,6 +77,7 @@ namespace DesafioPractico2
             this.nudNúmero.Name = "nudNúmero";
             this.nudNúmero.Size = new System.Drawing.Size(120, 30);
             this.nudNúmero.TabIndex = 5;
+            this.nudNúmero.Enter += new System.EventHandler(this.nudNúmero_Enter);
             // 
             // btnEliminar
             // 

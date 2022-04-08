@@ -257,6 +257,12 @@ namespace DesafioPractico2
             */
         }
 
+        private void nudNúmero_Enter(object sender, EventArgs e)
+        {
+            
+
+        }
+
         private void HeapMínimo_Load(object sender, EventArgs e)
         {
 

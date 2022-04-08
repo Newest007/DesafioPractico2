@@ -232,11 +232,12 @@ namespace DesafioPractico2
 
         public void Anchura()
         {
-              for (int p = 1; p < arreglo_numeros.Length; p++)
-              {
-                  ListAnchura.Add(arreglo_numeros[p].ToString());
-              }
-            
+
+            for (int p = 1; p < arreglo_numeros.Length; p++)
+            {
+                ListAnchura.Add(arreglo_numeros[p].ToString());
+            }
+        
         }
 
         //=====================================================================//
@@ -290,18 +291,54 @@ namespace DesafioPractico2
             }*/
 
 
-            //Orden en anchura
-            listBox1.Items.Clear();
-            ListAnchura.Clear();
-
-            Anchura();
-
-            foreach (var valores in ListAnchura)
+            if (rbtnAnchura.Checked == true)
             {
-                listBox1.Items.Add(valores);
-            }
+                //Orden en anchura
+
+                if (arreglo_numeros[i] != 0)
+                {
+                    listBox1.Items.Clear();
+                    ListAnchura.Clear();
+
+                    Anchura();
+
+                    foreach (var valores in ListAnchura)
+                    {
+                        listBox1.Items.Add(valores);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El arreglo está vacío");
+                }
             
 
+                
+
+            }
+
+        }
+
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void nudNúmero_Enter(object sender, EventArgs e)
+        {
+            if(nudNúmero.Value == 0)
+            {
+                nudNúmero.Value.ToString("Hola");
+            }
+
+        }
+
+        private void nudNúmero_Leave(object sender, EventArgs e)
+        {
+            if (nudNúmero.Value.ToString() == "") 
+            {
+                nudNúmero.Value = 0;
+            }
         }
 
         private void HeapMaximo_FormClosed(object sender, FormClosedEventArgs e)
@@ -309,18 +346,22 @@ namespace DesafioPractico2
             Application.Exit();
         }
 
+        
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-           /*
+           
             int maxindex = arreglo_numeros.Length;
-            arreglo_numeros[1] = arreglo_numeros[maxindex - 1]; //l primer numero es igual al ultimo numero
+            arreglo_numeros[1] = arreglo_numeros[maxindex - 1]; //El primer numero es igual al ultimo numero
 
-            Array.Resize<int>(ref arreglo_numeros, maxindex - 1); //Elimina el ultimo numero
+
+            Array.Resize(ref arreglo_numeros, maxindex - 1); //Elimina el ultimo numero
 
             Arreglo[1] = Arreglo[maxindex - 1];
             Arreglo[1].Location = new Point(tabPage1.Width / 2, 20);
             Array.Resize<Button>(ref Arreglo, maxindex - 1);
 
+            Dibuja_Arreglo(ref Arreglo, ref tabPage1);
 
             tabPage1.Controls.Clear();
             estado = true;
@@ -328,7 +369,7 @@ namespace DesafioPractico2
 
             Ordenar();
             tabPage1.Refresh();
-            */
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -373,6 +414,8 @@ namespace DesafioPractico2
             {
                 MessageBox.Show("Valor no Válido");
             }
+        
+            
         }
     }
 }
