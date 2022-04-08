@@ -31,10 +31,10 @@ namespace DesafioPractico2
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nudNúmero = new System.Windows.Forms.NumericUpDown();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.nudNúmero = new System.Windows.Forms.NumericUpDown();
             this.tbHeap = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1.SuspendLayout();
@@ -66,6 +66,18 @@ namespace DesafioPractico2
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controles";
             // 
+            // nudNúmero
+            // 
+            this.nudNúmero.Location = new System.Drawing.Point(37, 46);
+            this.nudNúmero.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.nudNúmero.Name = "nudNúmero";
+            this.nudNúmero.Size = new System.Drawing.Size(120, 30);
+            this.nudNúmero.TabIndex = 5;
+            // 
             // btnEliminar
             // 
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -75,6 +87,7 @@ namespace DesafioPractico2
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnLimpiar
             // 
@@ -97,18 +110,6 @@ namespace DesafioPractico2
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // nudNúmero
-            // 
-            this.nudNúmero.Location = new System.Drawing.Point(37, 46);
-            this.nudNúmero.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.nudNúmero.Name = "nudNúmero";
-            this.nudNúmero.Size = new System.Drawing.Size(120, 30);
-            this.nudNúmero.TabIndex = 5;
             // 
             // tbHeap
             // 
