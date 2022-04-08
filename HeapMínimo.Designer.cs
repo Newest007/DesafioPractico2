@@ -29,7 +29,6 @@ namespace DesafioPractico2
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nudNúmero = new System.Windows.Forms.NumericUpDown();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -44,21 +43,14 @@ namespace DesafioPractico2
             this.rbtnAnchura = new System.Windows.Forms.RadioButton();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNúmero)).BeginInit();
             this.tbHeap.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(289, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 37);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Heap Mínimo";
             // 
             // groupBox1
             // 
@@ -158,9 +150,9 @@ namespace DesafioPractico2
             this.groupBox2.Controls.Add(this.btnMostrar);
             this.groupBox2.Controls.Add(this.listBox1);
             this.groupBox2.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(676, 4);
+            this.groupBox2.Location = new System.Drawing.Point(676, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(338, 212);
+            this.groupBox2.Size = new System.Drawing.Size(338, 216);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Recorridos";
@@ -229,13 +221,32 @@ namespace DesafioPractico2
             this.listBox1.Size = new System.Drawing.Size(125, 119);
             this.listBox1.TabIndex = 7;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(17)))), ((int)(((byte)(84)))));
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(-2, -3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1032, 78);
+            this.panel1.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(280, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(158, 37);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Heap Minimo";
+            // 
             // HeapMínimo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 669);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tbHeap);
             this.Controls.Add(this.groupBox1);
             this.Name = "HeapMínimo";
@@ -248,14 +259,13 @@ namespace DesafioPractico2
             this.tbHeap.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NumericUpDown nudNúmero;
         private System.Windows.Forms.Button btnEliminar;
@@ -270,5 +280,7 @@ namespace DesafioPractico2
         private System.Windows.Forms.RadioButton rbtnAnchura;
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
     }
 }

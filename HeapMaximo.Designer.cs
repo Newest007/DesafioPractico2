@@ -44,17 +44,19 @@ namespace DesafioPractico2
             this.rbtnEnOrden = new System.Windows.Forms.RadioButton();
             this.rbtnPreOrden = new System.Windows.Forms.RadioButton();
             this.rbtnPostOrden = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tbHeap.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNúmero)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(274, 23);
+            this.label1.Location = new System.Drawing.Point(280, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 37);
             this.label1.TabIndex = 1;
@@ -87,6 +89,7 @@ namespace DesafioPractico2
             this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(69, 87);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(557, 104);
@@ -179,9 +182,10 @@ namespace DesafioPractico2
             this.groupBox2.Controls.Add(this.btnMostrar);
             this.groupBox2.Controls.Add(this.listBox1);
             this.groupBox2.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(678, 5);
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(678, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(319, 221);
+            this.groupBox2.Size = new System.Drawing.Size(356, 226);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Recorridos";
@@ -230,15 +234,25 @@ namespace DesafioPractico2
             this.rbtnPostOrden.Text = "Post Orden";
             this.rbtnPostOrden.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(17)))), ((int)(((byte)(84)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(-6, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1032, 78);
+            this.panel1.TabIndex = 10;
+            // 
             // HeapMaximo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1014, 669);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tbHeap);
-            this.Controls.Add(this.label1);
             this.Name = "HeapMaximo";
             this.Text = "HeapMaximo";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HeapMaximo_FormClosed);
@@ -247,8 +261,9 @@ namespace DesafioPractico2
             ((System.ComponentModel.ISupportInitialize)(this.nudNúmero)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -269,5 +284,6 @@ namespace DesafioPractico2
         private System.Windows.Forms.RadioButton rbtnPreOrden;
         private System.Windows.Forms.RadioButton rbtnEnOrden;
         private System.Windows.Forms.RadioButton rbtnAnchura;
+        private System.Windows.Forms.Panel panel1;
     }
 }

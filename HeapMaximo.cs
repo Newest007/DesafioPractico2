@@ -232,12 +232,10 @@ namespace DesafioPractico2
 
         public void Anchura()
         {
-
             for (int p = 1; p < arreglo_numeros.Length; p++)
             {
                 ListAnchura.Add(arreglo_numeros[p].ToString());
             }
-        
         }
 
         //=====================================================================//
@@ -273,24 +271,11 @@ namespace DesafioPractico2
             }
         }
 
+
+        // Boton para hacer los recorridos
         private void button1_Click(object sender, EventArgs e)
         {
-            /*
-            try
-            {
-                listBox1.Items.Clear();
-                ListInorden.Clear();
-
-                Inorden(arreglo_numeros[1]);
-
-                listBox1.Items.Add(ListInorden);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("" + ex);
-            }*/
-
-
+            
             if (rbtnAnchura.Checked == true)
             {
                 //Orden en anchura
