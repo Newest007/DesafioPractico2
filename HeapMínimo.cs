@@ -267,6 +267,8 @@ namespace DesafioPractico2
             Application.Exit();
         }
 
+
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try

@@ -20,6 +20,9 @@ namespace DesafioPractico2
         int[] arreglo_numeros;
         Button[] Arreglo;
 
+        Graphics g;
+
+
         public HeapMaximo()
         {
             InitializeComponent();
@@ -222,8 +225,40 @@ namespace DesafioPractico2
             Array.Resize<Button>(ref Arreglo, 1);
         }
 
+
+        //=====================================================================//
+        //                         Orden en Anchura                            //               
+        List<string> ListAnchura = new List<string>();
+
+        public void Anchura()
+        {
+              for (int p = 1; p < arreglo_numeros.Length; p++)
+              {
+                  ListAnchura.Add(arreglo_numeros[p].ToString());
+              }
+            
+        }
+
+        //=====================================================================//
+
+        /*List<string> ListInorden = new List<string>();
+
+        public void Inorden(int nodo)
+        {
+            int izquierdo = (nodo * 2);
+            int derecha = (nodo * 2) + 1;
+
+
+                Inorden(izquierdo);
+                ListInorden.Add(nodo.ToString());
+                Inorden(derecha);
+            
+        }*/
+
+
         private void tabPage1_Paint(object sender, PaintEventArgs e)
         {
+
             if (estado) //Si el estado es verdadero
             {
                 try
@@ -237,14 +272,48 @@ namespace DesafioPractico2
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /*
+            try
+            {
+                listBox1.Items.Clear();
+                ListInorden.Clear();
+
+                Inorden(arreglo_numeros[1]);
+
+                listBox1.Items.Add(ListInorden);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }*/
+
+
+            //Orden en anchura
+            listBox1.Items.Clear();
+            ListAnchura.Clear();
+
+            Anchura();
+
+            foreach (var valores in ListAnchura)
+            {
+                listBox1.Items.Add(valores);
+            }
+            
+
+        }
+
         private void HeapMaximo_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
+        
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            /*
+           /*
             int maxindex = arreglo_numeros.Length;
             arreglo_numeros[1] = arreglo_numeros[maxindex - 1]; //l primer numero es igual al ultimo numero
 
@@ -254,8 +323,10 @@ namespace DesafioPractico2
             Arreglo[1].Location = new Point(tabPage1.Width / 2, 20);
             Array.Resize<Button>(ref Arreglo, maxindex - 1);
 
+
             tabPage1.Controls.Clear();
             estado = true;
+
 
             Ordenar();
             tabPage1.Refresh();

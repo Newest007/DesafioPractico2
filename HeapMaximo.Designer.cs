@@ -37,6 +37,8 @@ namespace DesafioPractico2
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tbHeap.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNúmero)).BeginInit();
@@ -131,11 +133,32 @@ namespace DesafioPractico2
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(838, 111);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(848, 37);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 44);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // HeapMaximo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 669);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tbHeap);
             this.Controls.Add(this.label1);
@@ -160,5 +183,7 @@ namespace DesafioPractico2
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
