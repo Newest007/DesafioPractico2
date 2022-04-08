@@ -295,7 +295,7 @@ namespace DesafioPractico2
             {
                 //Orden en anchura
 
-                if (arreglo_numeros[i] != 0)
+                if (arreglo_numeros != null) 
                 {
                     listBox1.Items.Clear();
                     ListAnchura.Clear();
@@ -309,12 +309,9 @@ namespace DesafioPractico2
                 }
                 else
                 {
-                    MessageBox.Show("El arreglo está vacío");
+                    MessageBox.Show("Rey el arreglo está vacío","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             
-
-                
-
             }
 
         }
@@ -328,7 +325,7 @@ namespace DesafioPractico2
         {
             if(nudNúmero.Value == 0)
             {
-                nudNúmero.Value.ToString("Hola");
+                nudNúmero.Value.Equals(" ");
             }
 
         }

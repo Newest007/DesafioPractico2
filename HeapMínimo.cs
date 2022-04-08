@@ -263,6 +263,47 @@ namespace DesafioPractico2
 
         }
 
+        //=====================================================================//
+        //                         Orden en Anchura                            //               
+        List<string> ListAnchura = new List<string>();
+
+        public void Anchura()
+        {
+
+            for (int p = 1; p < arreglo_numeros.Length; p++)
+            {
+                ListAnchura.Add(arreglo_numeros[p].ToString());
+            }
+
+        }
+        //=====================================================================//
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            if (rbtnAnchura.Checked == true)
+            {
+                //Orden en anchura
+
+                if (arreglo_numeros != null) 
+                {
+                    listBox1.Items.Clear();
+                    ListAnchura.Clear();
+
+                    Anchura();
+
+                    foreach (var valores in ListAnchura)
+                    {
+                        listBox1.Items.Add(valores);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Rey el arreglo está vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
         private void HeapMínimo_Load(object sender, EventArgs e)
         {
 
