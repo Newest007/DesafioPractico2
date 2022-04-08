@@ -33,13 +33,13 @@ namespace DesafioPractico2
             this.tbHeap = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudNúmero = new System.Windows.Forms.NumericUpDown();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.tbHeap.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNúmero)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -70,10 +70,11 @@ namespace DesafioPractico2
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Heap";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage1_Paint);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.nudNúmero);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.btnAgregar);
@@ -85,17 +86,17 @@ namespace DesafioPractico2
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controles";
             // 
-            // numericUpDown1
+            // nudNúmero
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(37, 46);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nudNúmero.Location = new System.Drawing.Point(37, 46);
+            this.nudNúmero.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 30);
-            this.numericUpDown1.TabIndex = 5;
+            this.nudNúmero.Name = "nudNúmero";
+            this.nudNúmero.Size = new System.Drawing.Size(120, 30);
+            this.nudNúmero.TabIndex = 5;
             // 
             // btnEliminar
             // 
@@ -117,6 +118,7 @@ namespace DesafioPractico2
             this.btnLimpiar.TabIndex = 2;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnAgregar
             // 
@@ -127,6 +129,7 @@ namespace DesafioPractico2
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // HeapMaximo
             // 
@@ -141,7 +144,7 @@ namespace DesafioPractico2
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HeapMaximo_FormClosed);
             this.tbHeap.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNúmero)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,7 +156,7 @@ namespace DesafioPractico2
         private System.Windows.Forms.TabControl tbHeap;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudNúmero;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnAgregar;

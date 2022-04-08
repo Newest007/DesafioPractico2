@@ -221,7 +221,7 @@ namespace DesafioPractico2
             }
         }
 
-            private void tabPage1_Paint(object sender, PaintEventArgs e)
+        private void tabPage1_Paint(object sender, PaintEventArgs e)
         {
 
             if (estado) //Si el estado es verdadero
