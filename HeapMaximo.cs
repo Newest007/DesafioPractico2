@@ -20,7 +20,7 @@ namespace DesafioPractico2
         int[] arreglo_numeros;
         Button[] Arreglo;
 
-        Graphics g;
+        
 
 
         public HeapMaximo()
@@ -167,7 +167,7 @@ namespace DesafioPractico2
                 mayor = derecho;
             }
 
-            if (mayor != indice) // Si el menor es distinto del indice
+            if (mayor != indice) // Si el mayor es distinto del indice
             {
                 int temp = a[indice]; //Valor indice será el temporal
                 a[indice] = a[mayor]; //El menor se almacena en la posición del indice
@@ -192,6 +192,8 @@ namespace DesafioPractico2
             {
                 btnAgregar.Enabled = false;
                 btnLimpiar.Enabled = false;
+                btnMostrar.Enabled = false;
+                btnEliminar.Enabled = false;
                 this.Cursor = Cursors.WaitCursor;
 
                 if (!ec)
@@ -206,6 +208,8 @@ namespace DesafioPractico2
                 //Se habilita todo de nuevo
                 btnAgregar.Enabled = true;
                 btnLimpiar.Enabled = true;
+                btnMostrar.Enabled = true;
+                btnEliminar.Enabled = true;
                 this.Cursor = Cursors.Default;
 
             }
@@ -275,7 +279,8 @@ namespace DesafioPractico2
         // Boton para hacer los recorridos
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            Altura();
+
             if (rbtnAnchura.Checked == true)
             {
                 //Orden en anchura
@@ -284,6 +289,17 @@ namespace DesafioPractico2
                 {
                     listBox1.Items.Clear();
                     ListAnchura.Clear();
+
+                    for (int i = 1; i < arreglo_numeros.Length; i++)
+                    {
+                        Arreglo[i].BackColor = Color.White;
+                        Arreglo[i].ForeColor = Color.Black;
+                        Thread.Sleep(500);
+                        tabPage1.Refresh();
+                        Refresh();
+                        Arreglo[i].BackColor = Color.FromArgb(222, 17, 84);
+                        Arreglo[i].ForeColor = Color.White;
+                    }
 
                     Anchura();
 
@@ -310,7 +326,7 @@ namespace DesafioPractico2
         {
             if(nudNúmero.Value == 0)
             {
-                nudNúmero.Value.Equals(" ");
+                nudNúmero.Value.Equals(" asd");
             }
 
         }
@@ -332,26 +348,43 @@ namespace DesafioPractico2
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-           
+
             int maxindex = arreglo_numeros.Length;
+            
+
             arreglo_numeros[1] = arreglo_numeros[maxindex - 1]; //El primer numero es igual al ultimo numero
-
-
             Array.Resize(ref arreglo_numeros, maxindex - 1); //Elimina el ultimo numero
 
-            Arreglo[1] = Arreglo[maxindex - 1];
-            Arreglo[1].Location = new Point(tabPage1.Width / 2, 20);
-            Array.Resize<Button>(ref Arreglo, maxindex - 1);
+            
+            //Arreglo[1] = Arreglo[maxindex - 1];
+            //Arreglo[1].Location = new Point(tabPage1.Width / 2, 20);
+            //Array.Resize<Button>(ref Arreglo, maxindex - 1);
+            
 
-            Dibuja_Arreglo(ref Arreglo, ref tabPage1);
+            int temp;
+            for (int i = (maxindex - 1); i >= 1; i--) 
+            {
+                intercambio(ref Arreglo, i, 1); //Se hace el intercambio
 
-            tabPage1.Controls.Clear();
+                temp = arreglo_numeros[1];
+                arreglo_numeros[1] = arreglo_numeros[i - 1];
+                arreglo_numeros[i - 1] = temp;
+                //Array.Resize<Button>(ref Arreglo, maxindex - 1);
+
+                i--;
+            }
+
+            
             estado = true;
-
-
             Ordenar();
             tabPage1.Refresh();
-            
+           
+        }
+
+        private void Altura()
+        {
+            int altura = n;
+            label2.Text = altura.ToString();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -391,13 +424,16 @@ namespace DesafioPractico2
                 nudNúmero.Value = 0;
                 nudNúmero.Focus();
                 Ordenar();
+
+                
+
             }
             catch
             {
                 MessageBox.Show("Valor no Válido");
             }
-        
-            
+
+
         }
     }
 }

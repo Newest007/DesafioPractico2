@@ -202,6 +202,8 @@ namespace DesafioPractico2
             {
                 btnAgregar.Enabled = false;
                 btnLimpiar.Enabled = false;
+                btnEliminar.Enabled = false;
+                btnMostrar.Enabled = false;
                 this.Cursor = Cursors.WaitCursor;
 
                 if (!ec)
@@ -216,6 +218,8 @@ namespace DesafioPractico2
                 //Se habilita todo de nuevo
                 btnAgregar.Enabled = true;
                 btnLimpiar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnMostrar.Enabled = true;
                 this.Cursor = Cursors.Default;
 
             }
@@ -280,6 +284,7 @@ namespace DesafioPractico2
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
+            Altura();
             if (rbtnAnchura.Checked == true)
             {
                 //Orden en anchura
@@ -288,6 +293,17 @@ namespace DesafioPractico2
                 {
                     listBox1.Items.Clear();
                     ListAnchura.Clear();
+
+                    for (int i = 1; i < arreglo_numeros.Length; i++)
+                    {
+                        Arreglo[i].BackColor = Color.White;
+                        Arreglo[i].ForeColor = Color.Black;
+                        Thread.Sleep(500);
+                        tabPage1.Refresh();
+                        Refresh();
+                        Arreglo[i].BackColor = Color.FromArgb(222, 17, 84);
+                        Arreglo[i].ForeColor = Color.White;
+                    }
 
                     Anchura();
 
@@ -314,6 +330,11 @@ namespace DesafioPractico2
             Application.Exit();
         }
 
+        private void Altura()
+        {
+            int altura = n;
+            label1.Text = altura.ToString();
+        }
 
 
         private void btnAgregar_Click(object sender, EventArgs e)
