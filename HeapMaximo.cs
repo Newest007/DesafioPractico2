@@ -352,7 +352,7 @@ namespace DesafioPractico2
             {
                 if(arreglo_numeros != null)
                 {
-                    inor = true;
+                    postor = true;
                     string texto = "";
                     Colorear(preor, inor, postor, 1, ref texto);
                     txtNumeros.Text = texto;

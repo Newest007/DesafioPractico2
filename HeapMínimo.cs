@@ -345,6 +345,7 @@ namespace DesafioPractico2
         }
         private void btnMostrar_Click(object sender, EventArgs e)
         {
+            txtNumeros.Text = "";
             Altura();
             bool preor, inor, postor;
             postor = inor = preor = false;
@@ -407,6 +408,7 @@ namespace DesafioPractico2
                     string texto = "";
                     Colorear(preor, inor, postor, 1, ref texto);
                     txtNumeros.Text = texto;
+                    
                 }
                 else
                 {
@@ -418,7 +420,7 @@ namespace DesafioPractico2
             {
                 if (arreglo_numeros != null)
                 {
-                    inor = true;
+                    postor = true;
                     string texto = "";
                     Colorear(preor, inor, postor, 1, ref texto);
                     txtNumeros.Text = texto;
