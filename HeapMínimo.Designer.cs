@@ -39,19 +39,18 @@ namespace DesafioPractico2
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtNumeros = new System.Windows.Forms.TextBox();
             this.rbtnPostOrden = new System.Windows.Forms.RadioButton();
             this.rbtnPreOrden = new System.Windows.Forms.RadioButton();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.rbtnEnOrden = new System.Windows.Forms.RadioButton();
             this.rbtnAnchura = new System.Windows.Forms.RadioButton();
             this.btnMostrar = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNumeros = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNúmero)).BeginInit();
             this.tbHeap.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -136,8 +135,6 @@ namespace DesafioPractico2
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -151,7 +148,7 @@ namespace DesafioPractico2
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(156, 3);
+            this.label1.Location = new System.Drawing.Point(226, 176);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 23);
             this.label1.TabIndex = 12;
@@ -161,7 +158,7 @@ namespace DesafioPractico2
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Location = new System.Drawing.Point(73, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 23);
             this.label3.TabIndex = 1;
@@ -184,6 +181,13 @@ namespace DesafioPractico2
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Recorridos";
             // 
+            // txtNumeros
+            // 
+            this.txtNumeros.Location = new System.Drawing.Point(14, 178);
+            this.txtNumeros.Name = "txtNumeros";
+            this.txtNumeros.Size = new System.Drawing.Size(305, 30);
+            this.txtNumeros.TabIndex = 14;
+            // 
             // rbtnPostOrden
             // 
             this.rbtnPostOrden.AutoSize = true;
@@ -205,6 +209,15 @@ namespace DesafioPractico2
             this.rbtnPreOrden.TabStop = true;
             this.rbtnPreOrden.Text = "Pre Orden";
             this.rbtnPreOrden.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 23;
+            this.listBox1.Location = new System.Drawing.Point(16, 64);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(108, 96);
+            this.listBox1.TabIndex = 7;
             // 
             // rbtnEnOrden
             // 
@@ -239,15 +252,6 @@ namespace DesafioPractico2
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 23;
-            this.listBox1.Location = new System.Drawing.Point(16, 64);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(108, 96);
-            this.listBox1.TabIndex = 7;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(17)))), ((int)(((byte)(84)))));
@@ -267,19 +271,14 @@ namespace DesafioPractico2
             this.label2.TabIndex = 1;
             this.label2.Text = "Heap Minimo";
             // 
-            // txtNumeros
-            // 
-            this.txtNumeros.Location = new System.Drawing.Point(14, 178);
-            this.txtNumeros.Name = "txtNumeros";
-            this.txtNumeros.Size = new System.Drawing.Size(305, 30);
-            this.txtNumeros.TabIndex = 14;
-            // 
             // HeapMínimo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 669);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tbHeap);
             this.Controls.Add(this.groupBox1);
@@ -291,13 +290,12 @@ namespace DesafioPractico2
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudNúmero)).EndInit();
             this.tbHeap.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
