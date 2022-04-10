@@ -42,6 +42,7 @@ namespace DesafioPractico2
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtNumeros = new System.Windows.Forms.TextBox();
             this.rbtnPostOrden = new System.Windows.Forms.RadioButton();
             this.rbtnPreOrden = new System.Windows.Forms.RadioButton();
             this.rbtnEnOrden = new System.Windows.Forms.RadioButton();
@@ -182,15 +183,15 @@ namespace DesafioPractico2
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 23;
-            this.listBox1.Location = new System.Drawing.Point(165, 80);
+            this.listBox1.Location = new System.Drawing.Point(15, 63);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(125, 119);
+            this.listBox1.Size = new System.Drawing.Size(101, 96);
             this.listBox1.TabIndex = 7;
             // 
             // btnMostrar
             // 
             this.btnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrar.Location = new System.Drawing.Point(175, 29);
+            this.btnMostrar.Location = new System.Drawing.Point(203, 18);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(99, 44);
             this.btnMostrar.TabIndex = 8;
@@ -200,6 +201,7 @@ namespace DesafioPractico2
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtNumeros);
             this.groupBox2.Controls.Add(this.rbtnPostOrden);
             this.groupBox2.Controls.Add(this.rbtnPreOrden);
             this.groupBox2.Controls.Add(this.rbtnEnOrden);
@@ -215,10 +217,17 @@ namespace DesafioPractico2
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Recorridos";
             // 
+            // txtNumeros
+            // 
+            this.txtNumeros.Location = new System.Drawing.Point(15, 176);
+            this.txtNumeros.Name = "txtNumeros";
+            this.txtNumeros.Size = new System.Drawing.Size(305, 30);
+            this.txtNumeros.TabIndex = 13;
+            // 
             // rbtnPostOrden
             // 
             this.rbtnPostOrden.AutoSize = true;
-            this.rbtnPostOrden.Location = new System.Drawing.Point(22, 132);
+            this.rbtnPostOrden.Location = new System.Drawing.Point(203, 132);
             this.rbtnPostOrden.Name = "rbtnPostOrden";
             this.rbtnPostOrden.Size = new System.Drawing.Size(103, 27);
             this.rbtnPostOrden.TabIndex = 12;
@@ -229,7 +238,7 @@ namespace DesafioPractico2
             // rbtnPreOrden
             // 
             this.rbtnPreOrden.AutoSize = true;
-            this.rbtnPreOrden.Location = new System.Drawing.Point(22, 99);
+            this.rbtnPreOrden.Location = new System.Drawing.Point(203, 66);
             this.rbtnPreOrden.Name = "rbtnPreOrden";
             this.rbtnPreOrden.Size = new System.Drawing.Size(98, 27);
             this.rbtnPreOrden.TabIndex = 11;
@@ -240,7 +249,7 @@ namespace DesafioPractico2
             // rbtnEnOrden
             // 
             this.rbtnEnOrden.AutoSize = true;
-            this.rbtnEnOrden.Location = new System.Drawing.Point(22, 66);
+            this.rbtnEnOrden.Location = new System.Drawing.Point(203, 99);
             this.rbtnEnOrden.Name = "rbtnEnOrden";
             this.rbtnEnOrden.Size = new System.Drawing.Size(93, 27);
             this.rbtnEnOrden.TabIndex = 10;
@@ -314,5 +323,6 @@ namespace DesafioPractico2
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtNumeros;
     }
 }
