@@ -36,6 +36,8 @@ namespace DesafioPractico2
             this.btnAgregar = new System.Windows.Forms.Button();
             this.tbHeap = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbtnPostOrden = new System.Windows.Forms.RadioButton();
             this.rbtnPreOrden = new System.Windows.Forms.RadioButton();
@@ -45,8 +47,7 @@ namespace DesafioPractico2
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtNumeros = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNúmero)).BeginInit();
             this.tbHeap.SuspendLayout();
@@ -146,14 +147,35 @@ namespace DesafioPractico2
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage1_Paint);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(156, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 23);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "#";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(147, 23);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Altura del Montículo";
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtNumeros);
             this.groupBox2.Controls.Add(this.rbtnPostOrden);
             this.groupBox2.Controls.Add(this.rbtnPreOrden);
+            this.groupBox2.Controls.Add(this.listBox1);
             this.groupBox2.Controls.Add(this.rbtnEnOrden);
             this.groupBox2.Controls.Add(this.rbtnAnchura);
             this.groupBox2.Controls.Add(this.btnMostrar);
-            this.groupBox2.Controls.Add(this.listBox1);
             this.groupBox2.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(676, 0);
             this.groupBox2.Name = "groupBox2";
@@ -165,7 +187,7 @@ namespace DesafioPractico2
             // rbtnPostOrden
             // 
             this.rbtnPostOrden.AutoSize = true;
-            this.rbtnPostOrden.Location = new System.Drawing.Point(25, 155);
+            this.rbtnPostOrden.Location = new System.Drawing.Point(175, 145);
             this.rbtnPostOrden.Name = "rbtnPostOrden";
             this.rbtnPostOrden.Size = new System.Drawing.Size(103, 27);
             this.rbtnPostOrden.TabIndex = 12;
@@ -176,7 +198,7 @@ namespace DesafioPractico2
             // rbtnPreOrden
             // 
             this.rbtnPreOrden.AutoSize = true;
-            this.rbtnPreOrden.Location = new System.Drawing.Point(25, 122);
+            this.rbtnPreOrden.Location = new System.Drawing.Point(175, 112);
             this.rbtnPreOrden.Name = "rbtnPreOrden";
             this.rbtnPreOrden.Size = new System.Drawing.Size(98, 27);
             this.rbtnPreOrden.TabIndex = 11;
@@ -187,7 +209,7 @@ namespace DesafioPractico2
             // rbtnEnOrden
             // 
             this.rbtnEnOrden.AutoSize = true;
-            this.rbtnEnOrden.Location = new System.Drawing.Point(25, 89);
+            this.rbtnEnOrden.Location = new System.Drawing.Point(175, 79);
             this.rbtnEnOrden.Name = "rbtnEnOrden";
             this.rbtnEnOrden.Size = new System.Drawing.Size(93, 27);
             this.rbtnEnOrden.TabIndex = 10;
@@ -198,7 +220,7 @@ namespace DesafioPractico2
             // rbtnAnchura
             // 
             this.rbtnAnchura.AutoSize = true;
-            this.rbtnAnchura.Location = new System.Drawing.Point(25, 56);
+            this.rbtnAnchura.Location = new System.Drawing.Point(25, 29);
             this.rbtnAnchura.Name = "rbtnAnchura";
             this.rbtnAnchura.Size = new System.Drawing.Size(85, 27);
             this.rbtnAnchura.TabIndex = 9;
@@ -221,9 +243,9 @@ namespace DesafioPractico2
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 23;
-            this.listBox1.Location = new System.Drawing.Point(165, 80);
+            this.listBox1.Location = new System.Drawing.Point(16, 64);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(125, 119);
+            this.listBox1.Size = new System.Drawing.Size(108, 96);
             this.listBox1.TabIndex = 7;
             // 
             // panel1
@@ -245,25 +267,12 @@ namespace DesafioPractico2
             this.label2.TabIndex = 1;
             this.label2.Text = "Heap Minimo";
             // 
-            // label3
+            // txtNumeros
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 23);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Altura del Montículo";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(156, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 23);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "#";
+            this.txtNumeros.Location = new System.Drawing.Point(14, 178);
+            this.txtNumeros.Name = "txtNumeros";
+            this.txtNumeros.Size = new System.Drawing.Size(305, 30);
+            this.txtNumeros.TabIndex = 14;
             // 
             // HeapMínimo
             // 
@@ -311,5 +320,6 @@ namespace DesafioPractico2
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNumeros;
     }
 }

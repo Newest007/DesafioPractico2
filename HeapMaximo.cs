@@ -432,13 +432,7 @@ namespace DesafioPractico2
                     txt += $"{Arreglo[pos].Text} - ";
                 }
 
-
             }
-        
-        
-        
-        
-        
         }
 
 
@@ -460,7 +454,29 @@ namespace DesafioPractico2
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-           
+            int maxindex = arreglo_numeros.Length;
+            int temp;
+
+            //Intercambiamos el ultimo valor del arreglo con el primero (Raiz)
+
+            intercambio(ref Arreglo, maxindex - 1, 1);
+            temp = arreglo_numeros[maxindex - 1];
+            arreglo_numeros[maxindex - 1] = arreglo_numeros[1];
+            arreglo_numeros[1] = temp;
+
+
+            //Eliminamos el ultimo valor de los arreglos
+            arreglo_numeros = arreglo_numeros.Take(arreglo_numeros.Length - 1).ToArray();
+            Arreglo = Arreglo.Take(Arreglo.Length - 1).ToArray();
+
+
+            i--;
+            estado = true;
+            ec = false;
+            tabPage1.Controls.Clear();
+            Ordenar();
+            tabPage1.Refresh();
+
         }
 
         private void Altura()

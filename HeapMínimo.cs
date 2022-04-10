@@ -289,14 +289,71 @@ namespace DesafioPractico2
         }
         //=====================================================================//
 
+        public void colorearRaiz(int pos)
+        {
+            Arreglo[pos].BackColor = Color.White;
+            Arreglo[pos].ForeColor = Color.Black;
+            estado = true;
+            ec = false;
+            tabPage1.Controls.Clear();
+            tabPage1.Refresh();
+            Thread.Sleep(500);
+            Arreglo[pos].BackColor = Color.FromArgb(222, 17, 84);
+            Arreglo[pos].ForeColor = Color.White;
+            ec = false;
+            tabPage1.Controls.Clear();
+            tabPage1.Refresh();
+        }
+
+        public void Colorear(bool preor, bool inor, bool postor, int pos, ref string txt)
+        {
+            if (pos < Arreglo.Length)
+            {
+                if (preor == true)
+                {
+                    //Raiz
+                    colorearRaiz(pos);
+                    txt += $"{Arreglo[pos].Text} - ";
+                    //Recorrer Izquierda
+                    Colorear(preor, inor, postor, pos * 2, ref txt);
+                    //Recorrer derecha
+                    Colorear(preor, inor, postor, (pos * 2) + 1, ref txt);
+
+                }
+                else if (inor)
+                {
+                    //Recorrer Izquierda
+                    Colorear(preor, inor, postor, pos * 2, ref txt);
+                    //Raiz
+                    colorearRaiz(pos);
+                    txt += $"{Arreglo[pos].Text} - ";
+                    //Recorrer Derecha
+                    Colorear(preor, inor, postor, (pos * 2) + 1, ref txt);
+                }
+                else if (postor)
+                {
+                    //Izquierda
+                    Colorear(preor, inor, postor, pos * 2, ref txt);
+                    //Derecha
+                    Colorear(preor, inor, postor, (pos * 2) + 1, ref txt);
+                    //Raiz
+                    colorearRaiz(pos);
+                    txt += $"{Arreglo[pos].Text} - ";
+                }
+
+            }
+        }
         private void btnMostrar_Click(object sender, EventArgs e)
         {
             Altura();
+            bool preor, inor, postor;
+            postor = inor = preor = false;
+
             if (rbtnAnchura.Checked == true)
             {
                 //Orden en anchura
 
-                if (arreglo_numeros != null) 
+                if (arreglo_numeros != null)
                 {
                     listBox1.Items.Clear();
                     ListAnchura.Clear();
@@ -314,6 +371,7 @@ namespace DesafioPractico2
 
                     Anchura();
 
+
                     foreach (var valores in ListAnchura)
                     {
                         listBox1.Items.Add(valores);
@@ -324,6 +382,51 @@ namespace DesafioPractico2
                     MessageBox.Show("Rey el arreglo está vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+            }
+            if (rbtnPreOrden.Checked == true)
+            {
+                if (arreglo_numeros != null)
+                {
+                    preor = true;
+                    string texto = "";
+                    Colorear(preor, inor, postor, 1, ref texto);
+                    txtNumeros.Text = texto;
+
+                }
+                else
+                {
+                    MessageBox.Show("Rey el arreglo está vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            if (rbtnEnOrden.Checked == true)
+            {
+                if (arreglo_numeros != null)
+                {
+                    inor = true;
+                    string texto = "";
+                    Colorear(preor, inor, postor, 1, ref texto);
+                    txtNumeros.Text = texto;
+                }
+                else
+                {
+                    MessageBox.Show("Rey el arreglo está vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            if (rbtnPostOrden.Checked == true)
+            {
+                if (arreglo_numeros != null)
+                {
+                    inor = true;
+                    string texto = "";
+                    Colorear(preor, inor, postor, 1, ref texto);
+                    txtNumeros.Text = texto;
+                }
+                else
+                {
+                    MessageBox.Show("Rey el arreglo está vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
