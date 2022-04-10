@@ -20,8 +20,8 @@ namespace DesafioPractico2
         int[] arreglo_numeros;
         Button[] Arreglo;
 
-        
-
+        List<int> numerosList = new List<int>();
+        List<Button> botonesList = new List<Button>();
 
         public HeapMaximo()
         {
@@ -456,7 +456,7 @@ namespace DesafioPractico2
             Application.Exit();
         }
 
-        
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
