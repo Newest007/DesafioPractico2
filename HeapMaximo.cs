@@ -387,7 +387,7 @@ namespace DesafioPractico2
             ec = false;
             tabPage1.Controls.Clear();
             tabPage1.Refresh();
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Arreglo[pos].BackColor = Color.FromArgb(222, 17, 84);
             Arreglo[pos].ForeColor = Color.White;
             ec = false;
@@ -450,7 +450,10 @@ namespace DesafioPractico2
             Application.Exit();
         }
 
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
 
+        }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
