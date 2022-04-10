@@ -243,22 +243,29 @@ namespace DesafioPractico2
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            /*
             int maxindex = arreglo_numeros.Length;
-            arreglo_numeros[1] = arreglo_numeros[maxindex - 1]; //l primer numero es igual al ultimo numero
+            int temp;
 
-            Array.Resize<int>(ref arreglo_numeros, maxindex - 1); //Elimina el ultimo numero
+            //Intercambiamos el ultimo valor del arreglo con el primero (Raiz)
 
-            Arreglo[1] = Arreglo[maxindex - 1];
-            Arreglo[1].Location = new Point(tabPage1.Width / 2, 20);
-            Array.Resize<Button>(ref Arreglo, maxindex - 1);
+            intercambio(ref Arreglo, maxindex - 1, 1);
+            temp = arreglo_numeros[maxindex - 1];
+            arreglo_numeros[maxindex - 1] = arreglo_numeros[1];
+            arreglo_numeros[1] = temp;
 
-            tabPage1.Controls.Clear();
+
+            //Eliminamos el ultimo valor de los arreglos
+            arreglo_numeros = arreglo_numeros.Take(arreglo_numeros.Length - 1).ToArray();
+            Arreglo = Arreglo.Take(Arreglo.Length - 1).ToArray();
+
+
+            i--;
             estado = true;
-
+            ec = false;
+            tabPage1.Controls.Clear();
             Ordenar();
             tabPage1.Refresh();
-            */
+
         }
 
         private void nudNúmero_Enter(object sender, EventArgs e)

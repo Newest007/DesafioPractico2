@@ -20,8 +20,8 @@ namespace DesafioPractico2
         int[] arreglo_numeros;
         Button[] Arreglo;
 
-        
-
+        List<int> numerosList = new List<int>();
+        List<Button> botonesList = new List<Button>();
 
         public HeapMaximo()
         {
@@ -344,38 +344,31 @@ namespace DesafioPractico2
             Application.Exit();
         }
 
-        
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
             int maxindex = arreglo_numeros.Length;
-            
-
-            arreglo_numeros[1] = arreglo_numeros[maxindex - 1]; //El primer numero es igual al ultimo numero
-            Array.Resize(ref arreglo_numeros, maxindex - 1); //Elimina el ultimo numero
-
-            
-            //Arreglo[1] = Arreglo[maxindex - 1];
-            //Arreglo[1].Location = new Point(tabPage1.Width / 2, 20);
-            //Array.Resize<Button>(ref Arreglo, maxindex - 1);
-            
-
             int temp;
-            for (int i = (maxindex - 1); i >= 1; i--) 
-            {
-                intercambio(ref Arreglo, i, 1); //Se hace el intercambio
 
-                temp = arreglo_numeros[1];
-                arreglo_numeros[1] = arreglo_numeros[i - 1];
-                arreglo_numeros[i - 1] = temp;
-                //Array.Resize<Button>(ref Arreglo, maxindex - 1);
+            //Intercambiamos el ultimo valor del arreglo con el primero (Raiz)
 
-                i--;
-            }
+            intercambio(ref Arreglo, maxindex - 1, 1);
+            temp = arreglo_numeros[maxindex - 1];
+            arreglo_numeros[maxindex - 1] = arreglo_numeros[1];
+            arreglo_numeros[1] = temp;
 
+
+            //Eliminamos el ultimo valor de los arreglos
+            arreglo_numeros = arreglo_numeros.Take(arreglo_numeros.Length - 1).ToArray(); 
+            Arreglo = Arreglo.Take(Arreglo.Length - 1).ToArray();
             
+             
+            i--;
             estado = true;
+            ec = false;
+            tabPage1.Controls.Clear();
             Ordenar();
             tabPage1.Refresh();
            
